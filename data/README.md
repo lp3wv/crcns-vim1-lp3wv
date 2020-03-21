@@ -1,7 +1,7 @@
 
 Edit this file to describe how to retrieve the data set. Except for very small data files, it's not recommended to check data into version control.
 
-To retrieve the vim-1 data set, it must first be downloaded from the CRCNS site, using web interface and a bash script for batch downloading and verification. To load the data into python, the researchers have included code which imports the data into table format directly into python and made available the python script (code and documentation) on github. 
+To retrieve the vim-1 data set, it must first be downloaded from the CRCNS site, which I did from the web interface. I downloaded the EstimatedResponses.mat and Stimuli.mat files, as they were the comprehensive ones applicable for further mass-analysis. To load the data into python, the researchers have included code which imports the data into table format directly into python and made available the python script (code and documentation) on github. 
 
 To get all V1 voxel responses in the training data set:
 
