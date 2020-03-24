@@ -53,3 +53,5 @@ conda install git numpy scipy pandas matplotlib notebook
 Install the project in development mode by running `python setup.py develop`. If you use notebooks, this will ensure that you can access your modules.
 
 Edit this file to describe your actual project.
+
+For further analysis, I want to look at how closely the BOLD responses of certain images in the testing set correlate with that of training set, for which taking averages and comparisons will be necessary. I think it will help show how amplitude creates patterns of responses, including how these patterns vary across different brain regions.   
