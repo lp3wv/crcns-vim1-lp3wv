@@ -6,26 +6,27 @@ To retrieve the vim-1 data set, it must first be downloaded from the CRCNS site,
 I wrote two separate functions for the training and testing data set, in which the parameters are:subject, brain region, and image responses to examine (start and stop). In the function, the indices of nonzero responses are returned, and if multiple images are selected (default is all of them), an array of arrays will be returned. 
 
 This is a portion of the code I wrote:
-fullFile = tables.open_file(r'C:\Users\lasya\crcns-vim1-lp3wv\data\EstimatedResponses.mat')
 
-def BOLD_testing(subj, cxReg, imageStart=0, imageStop=1750):
+	fullFile = tables.open_file(r'C:\Users\lasya\crcns-vim1-lp3wv\data\EstimatedResponses.mat')
 
-    assert subj == "S1" or "S2", "please enter a valid subject"
-    idx = []
-    resp = []
+	def BOLD_testing(subj, cxReg, imageStart=0, imageStop=1750):
 
-    if subj == "S1":
-        dat = fullFile.get_node('/dataValS1')[:]
-        ROI = fullFile.get_node('/roiS1')[:].flatten()
-        idx = numpy.nonzero(ROI == cxReg)[0]
-        resp = dat[:, idx]
+    		assert subj == "S1" or "S2", "please enter a valid subject"
+    		idx = []
+    		resp = []
 
-        return resp[imageStart:imageStop]
+    		if subj == "S1":
+        		dat = fullFile.get_node('/dataValS1')[:]
+        		ROI = fullFile.get_node('/roiS1')[:].flatten()
+        		idx = numpy.nonzero(ROI == cxReg)[0]
+        		resp = dat[:, idx]
 
-    else:
-        dat = fullFile.get_node('/dataValS2')[:]
-        ROI = fullFile.get_node('/roiS2')[:].flatten()
-        idx = numpy.nonzero(ROI == cxReg)[0]
-        resp = dat[:, idx]
+        		return resp[imageStart:imageStop]
 
-        return resp[imageStart:imageStop]
+    		else:
+        		dat = fullFile.get_node('/dataValS2')[:]
+        		ROI = fullFile.get_node('/roiS2')[:].flatten()
+        		idx = numpy.nonzero(ROI == cxReg)[0]
+        		resp = dat[:, idx]
+
+        		return resp[imageStart:imageStop]
